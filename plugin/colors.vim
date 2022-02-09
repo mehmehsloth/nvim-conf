@@ -68,6 +68,6 @@ map <Space>ww :call WarmDark()<CR>
 
 
 let g:edge_style = 'default'
-call ItalicsEnable()
+" call ItalicsEnable()
 set background=dark
-colorscheme base16-ocean
+colorscheme tokyonight
