@@ -3,7 +3,9 @@ call plug#begin("~/.nvim/plugged")
     Plug 'shaunsingh/solarized.nvim'
     Plug 'folke/tokyonight.nvim'
     Plug 'sainnhe/edge'
-    Plug 'RRethy/nvim-base16'
+    Plug 'navarasu/onedark.nvim'
+    Plug 'catppuccin/nvim', { 'as' : 'catppuccin' }
+    Plug 'sainnhe/gruvbox-material'
 
     Plug 'glepnir/dashboard-nvim'
     Plug 'jiangmiao/auto-pairs'
@@ -11,14 +13,16 @@ call plug#begin("~/.nvim/plugged")
     Plug 'akinsho/nvim-toggleterm.lua'
     Plug 'junegunn/goyo.vim'
     Plug 'folke/todo-comments.nvim'
+    Plug 'windwp/nvim-ts-autotag'
+    Plug 'numToStr/Comment.nvim'
+    Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+
     
     Plug 'KabbAmine/vCoolor.vim'
     Plug 'lilydjwg/colorizer'
 
     Plug 'kyazdani42/nvim-tree.lua'
 
-    Plug 'tpope/vim-commentary'
-    
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
@@ -81,10 +85,10 @@ nnoremap <silent>    <C-q> :bdelete <CR>
 nnoremap <silent> <Space>S :SessionSave<CR>
 nnoremap <leader><leader>g :GitGutterToggle<CR>
 
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
+" noremap <Up> <Nop>
+" noremap <Down> <Nop>
+" noremap <Left> <Nop>
+" noremap <Right> <Nop>
 
 
 " Commentary
@@ -122,12 +126,11 @@ autocmd VimEnter *
 " Auto formatting use neoformat
 augroup NeoformatAutoFormat
     autocmd!
-    autocmd BufWritePre *.{js,jsx,ts,tsx,css,html} PrettierAsync
+    autocmd BufWritePre *.{js,jsx,ts,tsx,css,html} Neoformat
 augroup END
 
 let g:neoformat_try_formatprg = 1
 " nnoremap <leader>ap :Neoformat <CR>
-
 
 " Important for colorschemes
 nmap <F5> :call <SID>SynStack()<CR>
@@ -171,6 +174,32 @@ lua << EOF
    v = "#9647EB",   -- etc..
   }
  }
+
+require('Comment').setup({
+    pre_hook = function(ctx)
+        -- Only calculate commentstring for tsx filetypes
+        if vim.bo.filetype == 'typescriptreact' then
+            local U = require('Comment.utils')
+
+            -- Detemine whether to use linewise or blockwise commentstring
+            local type = ctx.ctype == U.ctype.line and '__default' or '__multiline'
+
+            -- Determine the location where to calculate commentstring from
+            local location = nil
+            if ctx.ctype == U.ctype.block then
+                location = require('ts_context_commentstring.utils').get_cursor_location()
+            elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
+                location = require('ts_context_commentstring.utils').get_visual_start_location()
+            end
+
+            return require('ts_context_commentstring.internal').calculate_commentstring({
+                key = type,
+                location = location,
+            })
+        end
+    end,
+})
+require('nvim-ts-autotag').setup()
 EOF
 let g:nvim_tree_show_icons = {
     \ 'folders': 0,
