@@ -6,7 +6,10 @@ call plug#begin("~/.nvim/plugged")
     Plug 'navarasu/onedark.nvim'
     Plug 'catppuccin/nvim', { 'as' : 'catppuccin' }
     Plug 'sainnhe/gruvbox-material'
+    Plug 'projekt0n/github-nvim-theme'
+    Plug 'tanvirtin/monokai.nvim'
 
+    Plug 'metakirby5/codi.vim'
     Plug 'glepnir/dashboard-nvim'
     Plug 'jiangmiao/auto-pairs'
     Plug 'frazrepo/vim-rainbow'

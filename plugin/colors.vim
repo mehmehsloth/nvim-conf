@@ -70,4 +70,4 @@ map <Space>ww :call WarmDark()<CR>
 let g:edge_style = 'default'
 " call ItalicsEnable()
 set background=dark
-colorscheme catppuccin
+colorscheme monokai
