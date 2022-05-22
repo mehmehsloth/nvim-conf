@@ -9,3 +9,5 @@ require'lspconfig'.tailwindcss.setup{}
 --css
 --require'lspconfig'.cssls.setup{}
 
+--rust
+require'lspconfig'.rls.setup{}
