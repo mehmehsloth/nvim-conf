@@ -1,5 +1,6 @@
 "Plugins
 call plug#begin("~/.nvim/plugged")
+    Plug 'bluz71/vim-moonfly-colors'
     Plug 'shaunsingh/solarized.nvim'
     Plug 'folke/tokyonight.nvim'
     Plug 'sainnhe/edge'
