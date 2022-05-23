@@ -19,7 +19,7 @@ call plug#begin("~/.nvim/plugged")
     Plug 'windwp/nvim-ts-autotag'
     Plug 'numToStr/Comment.nvim'
     Plug 'JoosepAlviste/nvim-ts-context-commentstring'
-
+    Plug 'folke/zen-mode.nvim'
     
     Plug 'KabbAmine/vCoolor.vim'
     Plug 'lilydjwg/colorizer'
@@ -82,9 +82,9 @@ vmap > >gv
 
 map <F9> : make %:r <CR>
 
-nnoremap <silent>    <S-Tab> :bp<CR>
-nnoremap <silent>    <Tab> :bn<CR>
-nnoremap <silent>    <C-q> :bdelete <CR>
+nnoremap <silent>    <S-Tab> :BufferPrev<CR>
+nnoremap <silent>    <Tab> :BufferNext<CR>
+nnoremap <silent>    <C-q> :BufferClose <CR>
 nnoremap <silent> <Space>S :SessionSave<CR>
 nnoremap <leader><leader>g :GitGutterToggle<CR>
 
