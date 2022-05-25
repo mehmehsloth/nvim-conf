@@ -11,3 +11,6 @@ require'lspconfig'.tailwindcss.setup{}
 
 --rust
 require'lspconfig'.rls.setup{}
+
+-- prisma
+require'lspconfig'.prismals.setup{}
