@@ -58,7 +58,8 @@ call plug#begin("~/.nvim/plugged")
 
     Plug 'romgrk/barbar.nvim'
     Plug 'kyazdani42/nvim-web-devicons' 
-    Plug 'tamton-aquib/staline.nvim'
+    Plug 'nvim-lualine/lualine.nvim'
+    " Plug 'tamton-aquib/staline.nvim'
 
 call plug#end()
 
@@ -170,14 +171,17 @@ lua << EOF
     }
    }
   }
- require('staline').setup{
-  mode_colors = {
-   n = "#2B78BB",
-   i = "#6FECB9",
-   c = "#e27d60",
-   v = "#9647EB",   -- etc..
-  }
- }
+
+require('lualine').setup()
+
+-- require('staline').setup{
+--  mode_colors = {
+--   n = "#2B78BB",
+--   i = "#6FECB9",
+--   c = "#e27d60",
+--   v = "#9647EB",   -- etc..
+--  }
+-- }
 
 require('Comment').setup({
     pre_hook = function(ctx)
