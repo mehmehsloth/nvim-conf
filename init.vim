@@ -1,7 +1,5 @@
 "Plugins
 call plug#begin("~/.nvim/plugged")
-    Plug 'bluz71/vim-moonfly-colors'
-    Plug 'shaunsingh/solarized.nvim'
     Plug 'folke/tokyonight.nvim'
     Plug 'sainnhe/edge'
     Plug 'navarasu/onedark.nvim'
@@ -9,6 +7,9 @@ call plug#begin("~/.nvim/plugged")
     Plug 'sainnhe/gruvbox-material'
     Plug 'projekt0n/github-nvim-theme'
     Plug 'tanvirtin/monokai.nvim'
+    Plug 'overcache/NeoSolarized'
+    Plug 'doums/darcula'
+    Plug 'EdenEast/nightfox.nvim'
 
     Plug 'metakirby5/codi.vim'
     Plug 'glepnir/dashboard-nvim'
@@ -37,6 +38,7 @@ call plug#begin("~/.nvim/plugged")
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
+    Plug 'onsails/lspkind.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -172,7 +174,12 @@ lua << EOF
    }
   }
 
-require('lualine').setup()
+require('lualine').setup{
+options = {
+  component_separators = { left = ' ', right = ' '},
+  section_separators = { left = ' ', right = ' '},
+  }
+}
 
 -- require('staline').setup{
 --  mode_colors = {

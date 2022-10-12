@@ -14,3 +14,6 @@ require'lspconfig'.rls.setup{}
 
 -- prisma
 require'lspconfig'.prismals.setup{}
+
+-- python
+require'lspconfig'.pyright.setup{}

@@ -13,7 +13,7 @@ set smartcase
 set noswapfile
 set nobackup
 set undodir=~/.nvim/undodir
-set undofile
+
 set cursorline
 set signcolumn=yes
 set incsearch
@@ -22,7 +22,6 @@ set formatoptions-=cro
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*node_modules/     " MacOSX/Linux
 set t_Co=256
 set hidden
-" set guicursor=
 " set colorcolumn=80
 set icm=split
 " set rdt=5000

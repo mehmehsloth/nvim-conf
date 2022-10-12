@@ -4,7 +4,6 @@ M.project_files = function()
     local opts = {
      winblend = 20;
      prompt_title = false;
-     previewer = false;
      layout_config = {
          width = 0.7;
          height = 0.8;

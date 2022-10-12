@@ -69,5 +69,22 @@ map <Space>ww :call WarmDark()<CR>
 
 let g:edge_style = 'default'
 " call ItalicsEnable()
+set termguicolors
 set background=dark
-colorscheme moonfly
+let g:zenbones_compat = 1
+let g:gruvbox_material_transparent_background = 1
+let g:onedark_config = {
+      \  'transparent' : 1
+\}
+let g:tokyonight_transparent = 1
+" lua << EOF
+" require("nightfox").setup({
+"   options = {
+"     transparent = true
+"   }
+" })
+" EOF
+
+" colorscheme tokyonight
+colorschem carbonfox
+" call Transparency()

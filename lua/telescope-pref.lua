@@ -11,9 +11,9 @@ require('telescope').setup{
         preview_cutoff = 0.5,
     }
   },
-  pickers = {
-    find_files = {
-      theme = "ivy",
-    }
-  },
+  -- pickers = {
+  --   find_files = {
+  --     theme = "ivy",
+  --   }
+  -- },
 }
