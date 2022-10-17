@@ -163,10 +163,10 @@ lua << EOF
   require("nvim-tree").setup{
     view = {
     width = 30,
-    height = 30,
+    -- height = 30,
     hide_root_folder = false,
     side = 'right',
-    auto_resize = false,
+    -- auto_resize = false,
     mappings = {
       custom_only = false,
       list = {}
