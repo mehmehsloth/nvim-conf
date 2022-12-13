@@ -85,6 +85,6 @@ let g:tokyonight_transparent = 1
 " })
 " EOF
 
-" colorscheme tokyonight
-colorschem carbonfox
+colorscheme adwaita
+" colorschem carbonfox
 " call Transparency()

@@ -18,5 +18,5 @@
 "     \]
 
 nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
-let g:dashboard_custom_header = {}
+let g:dashboard_custom_header = {} 
 let g:dashboard_custom_section = {}

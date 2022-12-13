@@ -10,6 +10,7 @@ call plug#begin("~/.nvim/plugged")
     Plug 'overcache/NeoSolarized'
     Plug 'doums/darcula'
     Plug 'EdenEast/nightfox.nvim'
+    Plug 'Mofiqul/adwaita.nvim'
 
     Plug 'metakirby5/codi.vim'
     Plug 'glepnir/dashboard-nvim'
